@@ -1,5 +1,11 @@
 "use strict";
 
+const fisrtName = prompt("inserisci il tuo nome");
+const lastName = prompt("inserisci il tuo cognome");
+const nameComplete = `${fisrtName} ${lastName}`;
+console.log(`il nome completo è: ${nameComplete}`);
+document.getElementById( "nome" ).innerHTML= ` ${nameComplete}`; 
+document.getElementById("cognome").innerHTML=` ${lastName}`;
 
 //il programma richiede un input all'utente tramite prompt:
 //-età, -numero km.--> queste 2 informazioni vanno usate come variabili.
