@@ -15,29 +15,32 @@ const distance =Number(km) ;
 console.log(`distanza che deve percorrere ${distance} km`);
 
 //costo iniziale del biglietto
-const ticket = 0.21
+const ticket = 0.21;
 console.log(`costo iniziale del biglietto ${ticket}`);
 
 //in base  alle informazioni fornite calcola il prezzo, 0,21euro al km.
 const ticketCost =  ticket * distance ;
-console.log(`costo del biglietto: ${ticketCost}€ `);
+console.log(`costo del biglietto: ${ticketCost}€`);
 
 
-// se sotto i 18 anni sconto del 20%
-const under18 = 20/100;
-const u18TicketCost = ticketCost - under18 +"€";
+// definissco variabile dello sconto a 0 e la modifico all interno delle condizioni
+let discount = 0;
 
-//se  oltre ai 65 anni sconti del 40%
-const over65 = 40/100;
-const o65TicketCost  = ticketCost - over65 +"€";
-
-
-//debug
-console.log(`sconto applicato ${u18TicketCost}`);
-
-
-// se l'età è compresa tra 18 e 65 calcolo normale
+//se l'utente è minore di 18 applico il 20% di sconto
+if (userAge > 18){
+    discount =  20;
+    console.log(`è stato applicato il 20% di sconto: ${}€`);
 // se sopra i 65 va applicato uno sconto del 40%
+}else if (userAge < 65){
+    discount = 40;
+    console.log(`è stato applicato il 40% di sconto: ${}€`);
+// se è compreso tra 18 e 65 prezzo normale
+}else{
+    console.log(`è stato applicato il prezzo normale del biglietto: ${}€`);
+}
+
+
+
 //l'output del prezzo è rielaborato con massimo 2 decimali.
 
 
