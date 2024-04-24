@@ -26,17 +26,20 @@ console.log(`costo del biglietto: ${ticketCost}€`);
 // definissco variabile dello sconto a 0 e la modifico all interno delle condizioni
 let discount = 0;
 
-//se l'utente è minore di 18 applico il 20% di sconto
+    //se l'utente è minore di 18 applico il 20% di sconto
 if (userAge > 18){
     discount =  20;
-    console.log(`è stato applicato il 20% di sconto: ${}€`);
-// se sopra i 65 va applicato uno sconto del 40%
+    //creo una const con prezzo scontato, sottraendo  lo sconto al prezzo completo
+    const discountedPrice = ticketCost - (ticketCost * discount /100)
+    console.log(`è stato applicato il 20% di sconto: ${discountedPrice}€`);
+    // se sopra i 65 va applicato uno sconto del 40%
 }else if (userAge < 65){
     discount = 40;
-    console.log(`è stato applicato il 40% di sconto: ${}€`);
-// se è compreso tra 18 e 65 prezzo normale
+    const discountedPrice = ticketCost - (ticketCost * discount /100)
+    console.log(`è stato applicato il 40% di sconto: ${discountedPrice}€`);
+    // se è compreso tra 18 e 65 prezzo normale
 }else{
-    console.log(`è stato applicato il prezzo normale del biglietto: ${}€`);
+    console.log(`è stato applicato il prezzo normale del biglietto: ${ticketCost}€`);
 }
 
 
