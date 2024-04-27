@@ -1,17 +1,25 @@
 
 //chiedere all'utente se vuole pari o dispari
-const userChoice = prompt("scegli pari o dispari");
+let userChoice = prompt("scegli pari o dispari");
 console.log("hai deciso ha deciso"+" "+userChoice);
 
 // Control per la scelta pari o dispari
 if (userChoice !== "pari" && userChoice !== "dispari") {
     alert("La scelta non è valida. Scegli 'pari' o 'dispari'.");
-    userChoice = prompt("Scegli pari o dispari:").toLowerCase();
+    userChoice = prompt("Scegli pari o dispari:");
+    console.log("la nuova scelta effettuata è"+ " " + userChoice)
 }
  
 //chiedere all'utente un numero compreso tra 1 e 9 
-const numberUser = Number(prompt("Scegli un numero tra 1 e 9:"));
-console.log("hai deciso"+" "+numberUser);
+let numberUser = Number(prompt("Scegli un numero tra 1 e 9:"));
+console.log("hai deciso" +" "+ numberUser);
+
+//Control per la scelta del numero
+if (numberUser > 9){
+    alert("La scelta non è valida. non puoi scegliere un numero maggiore di 9. Scegli un numero tra 1 e 9:");
+    numberUser = Number(prompt("Scegli un numero tra 1 e 9:"));
+    console.log("il nuovo numero scelto è"+ " " + numberUser)
+}
  
 //generare un numero tra 1 e 9 che sarà giocato dal pc 
 let numberComputer = Math.floor(Math.random() * 9) + 1;
@@ -35,5 +43,5 @@ if (sum % 2 === 0){
 if ((result === "pari" && userChoice === "pari")||(result === "dispari"&& userChoice === "dispari")){
     console.log("hai vinto! il risultato è"+ " " + result)
 }else{
-    console.log("midispaice ha vinto il pc, il risultato è"+ " "+ result)
+    console.log("midispiace ha vinto il pc, il risultato è"+ " "+ result)
 }
