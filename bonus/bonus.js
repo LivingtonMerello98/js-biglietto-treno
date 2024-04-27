@@ -2,6 +2,12 @@
 //chiedere all'utente se vuole pari o dispari
 const userChoice = prompt("scegli pari o dispari");
 console.log("hai deciso ha deciso"+" "+userChoice);
+
+// Control per la scelta pari o dispari
+if (userChoice !== "pari" && userChoice !== "dispari") {
+    alert("La scelta non è valida. Scegli 'pari' o 'dispari'.");
+    userChoice = prompt("Scegli pari o dispari:").toLowerCase();
+}
  
 //chiedere all'utente un numero compreso tra 1 e 9 
 const numberUser = Number(prompt("Scegli un numero tra 1 e 9:"));
@@ -25,3 +31,9 @@ if (sum % 2 === 0){
     result ="dispari";
 };
 
+//si determina chi ha vinto 
+if ((result === "pari" && userChoice === "pari")||(result === "dispari"&& userChoice === "dispari")){
+    console.log("hai vinto! il risultato è"+ " " + result)
+}else{
+    console.log("midispaice ha vinto il pc, il risultato è"+ " "+ result)
+}
